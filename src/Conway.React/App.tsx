@@ -10,8 +10,6 @@ const [height, width] = [25, 25];
 const initialGrid = randomInitialGrid(height, width);
 
 const App = () => <GridContainer initialGrid={initialGrid}
-                                 height={height}
-                                 width={width}
                                  updateFrequency={300} />;
 
 function randomInitialGrid(height: number, width: number)
