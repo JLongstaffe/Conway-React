@@ -5,6 +5,8 @@ import useInterval from '../useInterval';
 
 import Grid from './Grid/Grid';
 
+import { IStateGenerator } from '../../Conway.Core/Conway';
+
 const GridContainer: FunctionComponent<IGridProperties> =
     ({ initialGrid, nextState, updateFrequency }) =>
 {
@@ -28,7 +30,7 @@ interface IGridProperties
 {
     initialGrid: Readonly2D<boolean>;
 
-    nextState: (state: Readonly2D<boolean>) => Readonly2D<boolean>;
+    nextState: IStateGenerator;
 
     updateFrequency: number;
 }

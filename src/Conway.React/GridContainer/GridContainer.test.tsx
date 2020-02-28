@@ -5,6 +5,8 @@ import { render, fireEvent, act } from '@testing-library/react';
 
 import GridContainer from './GridContainer';
 
+import { IStateGenerator } from '../../Conway.Core/Conway';
+
 test('Grid snapshots', () =>
 {
     const horizontal = render
@@ -50,8 +52,7 @@ test('Clicking on cell toggles alive state', () =>
 
 test('Clicking Next advances next Conway state', () =>
 {
-    const mockNextState
-        : jest.Mock<Readonly2D<boolean>, [Readonly2D<boolean>]> = jest.fn();
+    const mockNextState: jest.MockedFunction<IStateGenerator> = jest.fn();
 
     mockNextState.mockReturnValue(verticalState);
 
@@ -93,8 +94,7 @@ test('Play updates state with correct frequency', () =>
 {
     jest.useFakeTimers();
 
-    const mockNextState
-        : jest.Mock<Readonly2D<boolean>, [Readonly2D<boolean>]> = jest.fn();
+    const mockNextState: jest.MockedFunction<IStateGenerator> = jest.fn();
 
     mockNextState.mockReturnValue([]);
 
@@ -119,8 +119,7 @@ test('Clicking Pause stops periodic updates', () =>
 {
     jest.useFakeTimers();
 
-    const mockNextState
-        : jest.Mock<Readonly2D<boolean>, [Readonly2D<boolean>]> = jest.fn();
+    const mockNextState: jest.MockedFunction<IStateGenerator> = jest.fn();
 
     mockNextState.mockReturnValue([]);
 

@@ -1,5 +1,10 @@
 
-export function NextState(state: Readonly2D<boolean>): Readonly2D<boolean>
+export interface IStateGenerator
+{
+    (state: Readonly2D<boolean>): Readonly2D<boolean>;
+}
+
+export const NextState: IStateGenerator = function(state)
 {
     return state.map
         ((row, y) => row.map
