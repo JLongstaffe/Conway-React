@@ -12,19 +12,24 @@ const Grid: FunctionComponent<IGridProperties> = ({ grid, setGrid }) =>
             { row.map((_, x) =>
                 <Cell key={`${x}-${y}`}
                       isAlive={ grid[y][x] }
-                      setAlive={ (isAlive) => setCell({ x, y, isAlive }) } />) }
+                      setAlive={ (isAlive) => setCell({ x, y, isAlive }) }
+                      coords={[x, y]} />) }
         </tr>)
 
     return <table><tbody>{ rows }</tbody></table>;
 }
 
-const Cell: FunctionComponent<ICellProperties> = ({ isAlive, setAlive } ) =>
+const Cell: FunctionComponent<ICellProperties> = ({ isAlive, setAlive, coords } ) =>
 {
     const cellStyle = { backgroundColor: (isAlive ? "grey" : "white") };
 
     const toggleAlive = () => setAlive(!isAlive);
 
-    return <td style={cellStyle} onClick={toggleAlive}>&nbsp;</td>
+    const [x, y] = coords;
+
+    return <td style={cellStyle}
+               onClick={toggleAlive}
+               data-testid={`${x}-${y}`}>&nbsp;</td>
 }
 
 function withCell(grid: Readonly2D<boolean>, cell: Cell): Readonly2D<boolean>
@@ -48,6 +53,8 @@ interface ICellProperties
     isAlive: boolean;
 
     setAlive: (alive: boolean) => void;
+
+    coords: [number, number]
 }
 
 type Cell = { x: number, y: number, isAlive: boolean };

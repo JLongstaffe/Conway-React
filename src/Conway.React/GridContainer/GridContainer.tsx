@@ -1,18 +1,16 @@
 
 import React, { FunctionComponent, useState } from 'react';
 
-import Grid from '../Grid/Grid';
-
 import useInterval from '../useInterval';
 
-import * as Conway from '../../Conway.Core/Conway';
+import Grid from './Grid/Grid';
 
 const GridContainer: FunctionComponent<IGridProperties> =
-    ({ initialGrid, updateFrequency }) =>
+    ({ initialGrid, nextState, updateFrequency }) =>
 {
     const [grid, setGrid] = useState(initialGrid);
 
-    const onNext = () => setGrid(Conway.NextState(grid));
+    const onNext = () => setGrid(nextState(grid));
 
     const [playing, setPlaying] = useInterval(onNext, updateFrequency);
 
@@ -29,6 +27,8 @@ const GridContainer: FunctionComponent<IGridProperties> =
 interface IGridProperties
 {
     initialGrid: Readonly2D<boolean>;
+
+    nextState: (state: Readonly2D<boolean>) => Readonly2D<boolean>;
 
     updateFrequency: number;
 }

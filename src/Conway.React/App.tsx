@@ -5,11 +5,14 @@ import './App.css';
 
 import GridContainer from './GridContainer/GridContainer';
 
+import * as Conway from '../Conway.Core/Conway';
+
 const [height, width] = [25, 25];
 
 const initialGrid = randomInitialGrid(height, width);
 
 const App = () => <GridContainer initialGrid={initialGrid}
+                                 nextState={Conway.NextState}
                                  updateFrequency={300} />;
 
 function randomInitialGrid(height: number, width: number)

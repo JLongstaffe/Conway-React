@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid snapshots 1`] = `
+<table>
+  <tbody>
+    <tr>
+      <td
+        data-testid="0-0"
+        style="background-color: white;"
+      >
+         
+      </td>
+      <td
+        data-testid="1-0"
+        style="background-color: white;"
+      >
+         
+      </td>
+      <td
+        data-testid="2-0"
+        style="background-color: white;"
+      >
+         
+      </td>
+    </tr>
+    <tr>
+      <td
+        data-testid="0-1"
+        style="background-color: grey;"
+      >
+         
+      </td>
+      <td
+        data-testid="1-1"
+        style="background-color: grey;"
+      >
+         
+      </td>
+      <td
+        data-testid="2-1"
+        style="background-color: grey;"
+      >
+         
+      </td>
+    </tr>
+    <tr>
+      <td
+        data-testid="0-2"
+        style="background-color: white;"
+      >
+         
+      </td>
+      <td
+        data-testid="1-2"
+        style="background-color: white;"
+      >
+         
+      </td>
+      <td
+        data-testid="2-2"
+        style="background-color: white;"
+      >
+         
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Grid snapshots 2`] = `
+<table>
+  <tbody>
+    <tr>
+      <td
+        data-testid="0-0"
+        style="background-color: white;"
+      >
+         
+      </td>
+      <td
+        data-testid="1-0"
+        style="background-color: grey;"
+      >
+         
+      </td>
+      <td
+        data-testid="2-0"
+        style="background-color: white;"
+      >
+         
+      </td>
+    </tr>
+    <tr>
+      <td
+        data-testid="0-1"
+        style="background-color: white;"
+      >
+         
+      </td>
+      <td
+        data-testid="1-1"
+        style="background-color: grey;"
+      >
+         
+      </td>
+      <td
+        data-testid="2-1"
+        style="background-color: white;"
+      >
+         
+      </td>
+    </tr>
+    <tr>
+      <td
+        data-testid="0-2"
+        style="background-color: white;"
+      >
+         
+      </td>
+      <td
+        data-testid="1-2"
+        style="background-color: grey;"
+      >
+         
+      </td>
+      <td
+        data-testid="2-2"
+        style="background-color: white;"
+      >
+         
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
