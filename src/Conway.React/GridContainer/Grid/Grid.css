@@ -7,3 +7,7 @@ table {
 td {
     border: 1px solid black;
 }
+
+.alive {
+    background-color: grey;
+}

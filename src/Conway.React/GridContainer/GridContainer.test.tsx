@@ -35,19 +35,13 @@ test('Clicking on cell toggles alive state', () =>
 
     const cell = getByTestId('1-1');
 
-    const aliveBackground = cell.style.backgroundColor;
+    fireEvent.click(cell);
+
+    expect(cell.className).not.toBe("alive");
 
     fireEvent.click(cell);
 
-    let toggledBackground = cell.style.backgroundColor;
-
-    expect(toggledBackground).not.toBe(aliveBackground);
-
-    fireEvent.click(cell);
-
-    toggledBackground = cell.style.backgroundColor;
-
-    expect(toggledBackground).toBe(aliveBackground);
+    expect(cell.className).toBe("alive");
 });
 
 test('Clicking Next advances next Conway state', () =>

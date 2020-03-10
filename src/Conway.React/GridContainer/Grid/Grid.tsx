@@ -21,13 +21,11 @@ const Grid: FunctionComponent<IGridProperties> = ({ grid, setGrid }) =>
 
 const Cell: FunctionComponent<ICellProperties> = ({ isAlive, setAlive, coords } ) =>
 {
-    const cellStyle = { backgroundColor: (isAlive ? "grey" : "white") };
-
     const toggleAlive = () => setAlive(!isAlive);
 
     const [x, y] = coords;
 
-    return <td style={cellStyle}
+    return <td className={isAlive ? "alive" : ""}
                onClick={toggleAlive}
                data-testid={`${x}-${y}`}>&nbsp;</td>
 }
